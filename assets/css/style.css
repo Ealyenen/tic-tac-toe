@@ -1,0 +1,157 @@
+body{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
+
+:root{
+    --main-bg: #E4F9CF;
+    --sub-bg: #CBE4A3;
+    --dark-bg: #98B06F;
+    --player-1-color: #FFDEBF;
+    --player-2-color: #D0BFFF;
+    --light-txt: #FFFFFF;
+    --dark-txt: #536A2F
+}
+
+.conteiner{
+    max-width: 320px;
+    width: 100%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.game-field-wrap{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.game-field{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: .6s;
+}
+
+.game-end-field{
+    opacity: 0.5;
+}
+
+.row{
+    display: flex;
+    gap: 10px;
+}
+
+.cell{
+    background: var(--main-bg);
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    transition: .6s;
+}
+
+.space-cell{
+    background: var(--main-bg);
+}
+
+.space-cell:hover{
+    background-color: var(--sub-bg);
+}
+
+.cell-player-1{
+    background-color: var(--player-1-color);
+    background-image: url('/assets/icons/zero.png');
+}
+
+.cell-player-1::after{
+    content: "";
+    background-image: url('../icons/0.svg'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60% 60%;
+    display: block;
+    width: 100px;
+    height: 100px;
+}
+
+.cell-player-2{
+    background-color: var(--player-2-color);
+}
+
+.cell-player-2::after{
+    content: "";
+    background-image: url('../icons/x.svg'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60% 60%;
+    display: block;
+    width: 100px;
+    height: 100px;
+}
+
+.cell-disabled{
+
+}
+
+
+.player-1{
+    /* background-color: var(--player-1-color); */
+}
+
+.player-2{
+    /* background-color: var(--player-2-color); */
+}
+
+.winner{
+
+}
+
+.managment{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 320px;
+    margin-top: 40px;
+}
+
+.restart{
+    display: none;
+    outline: none;
+    border: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 6px;
+    background-color: var(--dark-bg);
+    color: var(--light-txt);
+    transition: .6s;
+}
+
+.restart:hover{
+    background-color: var(--main-bg);
+    color: var(--dark-txt);
+}
+
+.restart-active{
+    display: block;
+}
+
+.winners-list-wrap{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.winners-list{
+    color: var(--dark-txt);
+    padding-left: 0;
+}
+
+.winners-list li{
+    margin-top: 10px;
+}
